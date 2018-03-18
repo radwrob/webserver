@@ -11,3 +11,7 @@ The project can be used as a template for your own project.
 * [Composer] - Helps declare, manage, and install dependencies of PHP projects.
 
 Frontend has been made based on a project from HTML5UP.
+
+### Installation
+cd server/
+composer install
