@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+{% if serverError %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>For full functionality of the site, use the button below...</p>
+                <p>Server error! We apologize for the inconvenience and please register at another time!</p>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>For full functionality of the site, use the button below...</p>
+                <a href="login.php" class="button-big">Log in!</a>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<!-- Content -->
+<div id="content-wrapper">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #1 -->
+                    <section>
+                        <header>
+                            <h2>Who we are</h2>
+                            <h3>A brief description about us</h3>
+                        </header>
+                        <a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
+                        <p>
+                            Lorem ipsum dolor sit amet enim. Etiam ullamcorper. 
+                            Suspendisse a pellentesque dui, non felis. 
+                            Maecenas malesuada elit lectus felis, malesuada ultricies. 
+                        </p>
+                    </section>
+
+                </div>
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #2 -->
+                    <section>
+                        <header>
+                            <h2>About the project</h2>
+                            <h3>Main functionality</h3>
+                        </header>
+                        <ul class="check-list">
+                            <li>Delicata moderatius persequeris vix</li>
+                            <li>Ut mei eius legendos deterruisset</li>
+                            <li>Munere ponderum sadipscing ut mei</li>
+                            <li>Est cu latine impedit verterem</li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #3 -->
+                    <section>
+                        <header>
+                            <h2>Tutorial</h2>
+                            <h3>Steps to be taken to full access of the website</h3>
+                        </header>
+                        <ul class="check-list">
+                            <li>Delicata moderatius persequeris vix</li>
+                            <li>Ut mei eius legendos deterruisset</li>
+                            <li>Munere ponderum sadipscing ut mei</li>
+                            <li>Est cu latine impedit verterem</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

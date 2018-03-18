@@ -1,0 +1,139 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+{% if serverError %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>Server error! We apologize for the inconvenience and please register at another time!</p>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>Complete the form below to create a new account</p>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<!-- Content -->
+<div id="content-wrapper">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #1 -->
+                    {% if e_register %}
+                    <section>
+                        <header>
+                            <h2>Warning!</h2>
+                            <h3>The following errors were detected:</h3>
+                        </header>
+                        <ul class="check-list">
+                            {% if e_login_stx or e_nick %}
+                            {% if e_login_stx %}
+                            <li>Login must have only alphanum...</li>
+                            {% endif %}
+                            {% if e_nick %}
+                            <li>The number is already used.</li>
+                            {% endif %}
+                            {% if e_login_len %}
+                            <li>Login must have only 3-20 chars.</li>
+                            {% endif %}                            
+                            {% else %}
+                            <li></li>
+                            {% endif %}
+                            {% if e_pass_length %}
+                            <li>Password is less than 8 characters.</li>
+                            {% else %}
+                            <li></li>
+                            {% endif %}	                                
+                            {% if e_pass_eq %}
+                            <li>Passwords are not identical.</li>
+                            {% else %}
+                            <li></li>
+                            {% endif %}	
+                            {% if e_statute %}
+                            <li>Please confirm the terms and conditions.</li>
+                            {% else %}
+                            <li></li>
+                            {% endif %} 
+                        </ul>
+                    </section>
+                    {% endif %} 
+
+                </div>
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #2 -->
+                    <form action="registration.php#start" method="post">
+                        <section>
+                            <header>
+                                <h2>Registration form</h2>
+                                <h3>Registration is free</h3>
+                            </header>
+
+                            <ul class="check-list">
+                                <li><input type="text" name="login" placeholder="Login"/></li>
+                                <li><input type="password" name="pass1" placeholder="Password" /></li>                                
+                                <li><input type="password" name="pass2" placeholder="Repeat password" /></li>	
+                                <li>        
+                                    <input type="checkbox" id="regBox" name="statute" class="css-checkbox" />
+                                    <label for="regBox" name="statute_lbl" class="css-label">I accept </label>
+                                    <a href="twig/en/terms.html" target="_blank" class="statutelink">
+                                        <label class="statutelabel">the terms and conditions.</label>
+                                    </a>
+                                </li>
+                                <li><input type="submit" value="Sign up" /></li>
+                            </ul>
+                        </section>
+                    </form>
+                </div>
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #3 -->
+                    <section>
+                        <header>
+                            <h2>Tips</h2>
+                            <h3></h3>
+                        </header>
+                        <a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
+                        <p></p>
+                    </section>
+
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

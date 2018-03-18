@@ -1,0 +1,21 @@
+{
+    "name": "webserver/server",
+    "description": "The website service containing the user registration and login system.",
+    "license": "MIT",    
+    "require": {
+        "twig/twig": "~1.0",
+        "mockery/mockery": "0.8.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src",
+            "tests"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Radoslaw Wrobel",
+            "email": "radoslaw.wrobel@gmx.com"
+        }
+    ]    
+}

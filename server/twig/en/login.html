@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+{% if serverError %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>Server error! We apologize for the inconvenience and please register at another time!</p>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>Complete the form below to log in to the website</p>
+
+            </div>
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Image -->
+                <a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<!-- Content -->
+<div id="content-wrapper">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #2 -->
+                    <form action="login.php" method="post">
+                        <section>
+                            <header>
+                                <h2>Login form</h2>
+                                <h3>Enter your login and password</h3>
+                            </header>
+
+                            <ul class="check-list">
+                                <li><input type="text" name="login" placeholder="login" /></li>
+                                <li><input type="password" name="password" placeholder="password" /></li>
+                                <li><input type="submit" value="Log in" /></li>
+                            </ul>
+                        </section>
+                    </form>
+                </div>
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #3 -->
+                    <section>
+                        <header>
+                            <h2>You do not have an account?</h2>
+                            <h3><a href="registration.php#start" class="register">Click here to create an account!</a></h3>
+                        </header>
+                        <a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
+                        <p>Creating an account is free. Allows you to fully exploit the functionality of the service.</p>
+                    </section>
+
+                </div>                
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #1 -->
+                    {% if e_login %}
+                    <section>
+                        <header>
+                            <h2>Warning!</h2>
+                            <h3>The following errors were detected:</h3>
+                        </header>
+                        <ul class="check-list">
+                            {% if invalidLogin or invalidPass %}
+                            <li>Incorrect login or password!</li>
+                            {% endif %}
+                        </ul>
+                    </section>
+                    {% endif %} 
+
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

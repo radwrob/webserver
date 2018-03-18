@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% set title = 'webserver' %}
+
+{% block head %}
+{% if serverError %}
+<p> Server error! We apologize for the inconvenience and please register at another time! </p>
+{% else %}
+<div id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="6u 12u(mobile)">
+
+                <!-- Banner Copy -->
+                <p>Full access to the site has been unlocked.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<!-- Content -->
+<div id="content-wrapper">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="4u 12u(mobile)">
+
+                    <!-- Box #2 -->
+                    <section>
+                        <header>
+                            <h2>About the project</h2>
+                            <h3>Main functionality</h3>
+                        </header>
+                        <ul class="check-list">
+                            <li>Delicata moderatius persequeris vix</li>
+                            <li>Ut mei eius legendos deterruisset</li>
+                            <li>Munere ponderum sadipscing ut mei</li>
+                            <li>Est cu latine impedit verterem</li>
+                        </ul>
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
