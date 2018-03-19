@@ -10,8 +10,10 @@ The project can be used as a template for your own project.
 * [PDO] - The PHP Data Objects extension defines a lightweight, consistent interface for accessing databases in PHP.
 * [Composer] - Helps declare, manage, and install dependencies of PHP projects.
 
-Frontend has been made based on a project from HTML5UP.
+Frontend has been made based on a project from [HTML5UP](https://html5up.net/).
 
 ### Installation
+```bash
 cd server/
 composer install
+```
